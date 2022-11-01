@@ -1,0 +1,36 @@
+#nav {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    background-color: aquamarine;
+    /* text-decoration: none; */
+    align-items: center;
+
+  }
+
+  #icon{
+    width:6%;
+  }
+
+  #seg1{
+    display:flex;
+    gap: 5rem;
+  }
+  #seg2{
+    display:flex;
+  }
+  #seg2>button{
+    height:40px;
+    /* border:1px solid red; */
+    margin-left: 4px;
+    width:80px;
+  }
+  #login{
+    border: 1px solid aquamarine;
+  }
+  #signup{
+    background-color: #007aff;
+    border: 1px solid #007aff;
+    color:white;
+  }
