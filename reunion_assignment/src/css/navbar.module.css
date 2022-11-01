@@ -1,5 +1,5 @@
 #nav {
-    width: 100%;
+    width: 100vh;
     height: 50px;
     display: flex;
     justify-content: space-around;
@@ -29,7 +29,7 @@
     width:80px;
   }
   #login{
-    border: 1px solid aquamarine;
+    border: 1px solid #007aff;
   }
   #signup{
     background-color: #007aff;
@@ -53,4 +53,9 @@
     background-color: #007aff;
     margin-top: 1.5%;
   }
+
+
+  /* responsive */
+
+
   
