@@ -10,13 +10,13 @@ const Navbar = () => {
         <p>Buy</p>
         <p>Sell</p>
         <p></p>
-        <select id="manageproperty">
-            <option value="Manage Property">Manage Property</option>
+        <select id={styles.manageproperty} >
+            <option value="">Manage Property</option>
             <option value="Houses">Houses</option>
             <option value="Mortage">Mortage</option>
             <option value="Villa">Villa</option>
         </select>
-        <select>
+        <select id={styles.resources}>
             <option value="Resources">Resources </option>
             <option value="">A</option>
             <option value="">B</option>
@@ -25,7 +25,7 @@ const Navbar = () => {
         </div>
         <div id={styles.seg2}>
             <button id={styles.login}>Login</button>
-            <button  id={styles.signup}>Sign up</button>
+            <button id={styles.signup}>Sign up</button>
         </div>
     </div>
   )

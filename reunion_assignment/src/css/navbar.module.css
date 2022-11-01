@@ -3,9 +3,11 @@
     height: 50px;
     display: flex;
     justify-content: space-around;
-    background-color: aquamarine;
+    background-color: #007aff;
+    color:white;
     /* text-decoration: none; */
     align-items: center;
+    margin-bottom: 5%;
 
   }
 
@@ -34,3 +36,21 @@
     border: 1px solid #007aff;
     color:white;
   }
+  #manageproperty{
+    /* border:1px solid red; */
+    height:20px;
+    border:1px solid #007aff;
+    background-color: #007aff;
+    margin-top: 1.5%;
+    color:white;
+  }
+
+  #resources{
+    /* border:1px solid red; */
+    height:20px;
+    color:white;
+    border:1px solid #007aff;
+    background-color: #007aff;
+    margin-top: 1.5%;
+  }
+  
