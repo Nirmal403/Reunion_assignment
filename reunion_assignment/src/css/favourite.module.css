@@ -1,4 +1,4 @@
-#show{
+#container{
     display:grid;
     /* border:1px solid red; */
     width:80%;
@@ -8,15 +8,10 @@
     margin-bottom: 5%;
    
 }
-#card{
+#show{
     border-radius:4px;
     width:90%;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-#card:hover{
-    cursor:pointer;
-    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 #price{
     color: #7163f2;
@@ -89,23 +84,7 @@
     font-size: 12px;
 }
 
-#favbtn{
-    /* border:1px solid red; */
-    margin-top:-5%;
-    background-color: white;
-    border:none;
-    height:10%;
-    margin-right: 2%;
 
-}
-#favbtn:active{
- background-color:bisque;
-}
-#name_fav{
-    /* border:1px solid green; */
-    display:flex;
-    justify-content: space-between;
-}
 
 
 /* responsiveness */

@@ -1,5 +1,5 @@
 #nav {
-    width: 100vh;
+    width: 100%;
     height: 50px;
     display: flex;
     justify-content: space-around;
@@ -12,7 +12,11 @@
   }
 
   #icon{
-    width:6%;
+    width:42%;
+    /* border:1px solid red; */
+  }
+  #icon:active{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
   #seg1{
@@ -30,11 +34,39 @@
   }
   #login{
     border: 1px solid #007aff;
+    border-radius:6px;
+  }
+  #login:active{
+    background-color: #007aff;
+    color:white;
+  }
+  #login:hover{
+    cursor:pointer;
   }
   #signup{
     background-color: #007aff;
     border: 1px solid #007aff;
     color:white;
+    border-radius:6px;
+  }
+  #signup:hover{
+    cursor:pointer;
+  }
+  #signup:active{
+    background-color: white;
+    color:black;
+  }
+ 
+  #fav{
+    /* border:1px solid red; */
+    display:flex;
+    width:5%;
+    background-color: 007aff;
+  }
+  #link{
+    /* border:1px solid red; */
+    color:white;
+    text-decoration: none;
   }
   #manageproperty{
     /* border:1px solid red; */
