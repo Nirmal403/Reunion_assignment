@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import styles from "../css/homepage.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar";
-
+import Footer from "../component/Footer";
 
 function HomePage() {
   let favv = JSON.parse(localStorage.getItem("favourite")) || [];
@@ -43,17 +43,15 @@ function HomePage() {
                 <span id={styles.month}>/month</span>
               </h3>
               <div id={styles.name_fav}>
-              <h4 id={styles.name}>{item.name}</h4>
-              <button id={styles.favbtn} onClick={() => 
-                
-                setFavourite(item)
-                
-              }
-                >
-                  <img width="20px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Love_Heart_symbol.svg/2250px-Love_Heart_symbol.svg.png"/> 
+                <h4 id={styles.name}>{item.name}</h4>
+                <button id={styles.favbtn} onClick={() => setFavourite(item)}>
+                  <img
+                    width="20px"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Love_Heart_symbol.svg/2250px-Love_Heart_symbol.svg.png"
+                  />
                 </button>
-                </div>
-             
+              </div>
+
               <p id={styles.address}>{item.address}</p>
               <div id={styles.details}>
                 <div id={styles.bed}>
@@ -74,6 +72,7 @@ function HomePage() {
           );
         })}
       </div>
+      <Footer />
     </div>
   );
 }
