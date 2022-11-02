@@ -22,7 +22,7 @@
     color: #7163f2;
     text-align: left;
     margin-left: 5%;
-    margin-top:-1%;
+    margin-top:0.5rem;
 }
 #month{
     color: #bcbbbf;
@@ -126,7 +126,7 @@
     #show{
         width: 100%;
         margin: auto;
-    
+        margin-bottom:2%;   
         display:grid;
         grid-template-columns: repeat(1, 1fr);
         /* border:1px solid red; */

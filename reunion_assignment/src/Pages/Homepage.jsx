@@ -4,17 +4,31 @@ import styles from "../css/homepage.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import Filterbar from "../component/Filterbar";
 
 function HomePage() {
+
+
+
   let favv = JSON.parse(localStorage.getItem("favourite")) || [];
   const [test, setTest] = useState([]);
   const [favourite, setFavourite] = useState("");
-
+  const [allData,setData]=useState(test); 
   const navigate = useNavigate();
   useEffect(() => {
     getfunc();
   }, []);
-
+  useEffect(() => {
+      async function fetchData(){
+      let api =  await fetch("https://masai-hotel30.herokuapp.com/data");
+      let apijson = await api.json();
+        // console.log(apijson);
+      setData(apijson);
+      }
+      fetchData();
+  }, []);
+  
+  // console.log(test);
   useEffect(() => {
     if (favourite) {
       favv.push(favourite);
@@ -26,17 +40,45 @@ function HomePage() {
   async function getfunc() {
     let api = await fetch("https://masai-hotel30.herokuapp.com/data");
     let apijson = await api.json();
-    //   console.log(apijson);
+      // console.log(apijson);
     setTest(apijson);
+  }
+
+  const generateGenderDataForDropdown =()=>{
+    return [...new Set(test.map((item) =>item.Type))];
+  }
+
+  const handleFilterName=(name)=>{
+    const filteredData = test.filter((item)=>{
+        const fullName=`${item.location}`;
+        if(fullName.toLowerCase().includes(name.toLowerCase())){
+          return item;
+        }
+    });
+    setData(filteredData);
+  }
+
+  const handleFilterType=(name)=>{
+    const filteredData = test.filter((item)=>{
+        const fullName=`${item.Type}`;
+        if(fullName.toLowerCase().includes(name.toLowerCase())){
+          return item;
+        }
+    });
+    setData(filteredData);
   }
 
   return (
     <div>
       <Navbar count={favv.length} />
-      <div id={styles.show}>
-        {test?.map((item) => {
+      <Filterbar 
+       genders={generateGenderDataForDropdown()}
+       onTypeFilter={handleFilterType}
+       onNameFilter={handleFilterName} />
+      <div id={styles.show} >
+        {allData?.map((item) => {
           return (
-            <div id={styles.card}>
+            <div id={styles.card} item={item} key={item.id}>
               <img id={styles.img} src={item.img} />
               <h3 id={styles.price}>
                 $ {item.price}

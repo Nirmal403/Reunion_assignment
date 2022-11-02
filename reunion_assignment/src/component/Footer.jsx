@@ -11,7 +11,7 @@ const Footer = () => {
         <Link id={styles.contact} to="/">Contact</Link>
       </div>
       <div id={styles.reserved}>
-            <p>© 2022 Scintillate. All rights reserved</p>
+            <p>© 2022 Estatery. All rights reserved</p>
             <div id={styles.social}>
               <button >
                 <img src="https://cdn-icons-png.flaticon.com/512/87/87390.png" />
