@@ -42,8 +42,8 @@ function Favourite() {
         </div>
         ))}
       </div>
-      <button>
-        <Link to="/">Back to home Page</Link>
+      <button id={styles.back}>
+        <Link id={styles.backlink} to="/">Back to home Page</Link>
       </button>
     </>
   );
