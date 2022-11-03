@@ -1,25 +1,25 @@
-import React,{useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../component/Navbar";
 import styles from "../css/favourite.module.css";
 import Footer from "../component/Footer";
 
 function Favourite() {
-  const [deleted, setdeleted] = useState("");
-  let data = JSON.parse(localStorage.getItem("favourite")) || [];
-  
-    const deleteitem=()=>{
-      {data.map((item) => {
-        console.log(item.id)
-      })}
-    }
-      
+  let favv = JSON.parse(localStorage.getItem("favourite")) || [];
+
+  //delete
+  const handleDelete = (index) => {
+    favv.splice(index, 1);
+    localStorage.setItem("todoTodo", JSON.stringify(favv));
+  };
+
+
   return (
     <>
-      <Navbar count={data.length} />
+      <Navbar count={favv.length} />
 
       <div id={styles.container}>
-        {data.map((item) => (
+        {favv.map((item, index) => (
           <div id={styles.show}>
             <div id={styles.card}>
               <img id={styles.img} src={item.img} />
@@ -27,9 +27,9 @@ function Favourite() {
                 $ {item.price}
                 <span id={styles.month}>/month</span>
               </h3>
-              <button onClick={() => deleteitem()}>Delete</button>
+              {/* <button onClick={() => handleDelete(index)}>Delete</button> */}
               <h4 id={styles.name}>{item.name}</h4>
-              
+
               <p id={styles.address}>{item.address}</p>
               <div id={styles.details}>
                 <div id={styles.bed}>
