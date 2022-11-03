@@ -1,12 +1,19 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../component/Navbar";
 import styles from "../css/favourite.module.css";
 import Footer from "../component/Footer";
 
 function Favourite() {
+  const [deleted, setdeleted] = useState("");
   let data = JSON.parse(localStorage.getItem("favourite")) || [];
-
+  
+    const deleteitem=()=>{
+      {data.map((item) => {
+        console.log(item.id)
+      })}
+    }
+      
   return (
     <>
       <Navbar count={data.length} />
@@ -20,8 +27,9 @@ function Favourite() {
                 $ {item.price}
                 <span id={styles.month}>/month</span>
               </h3>
-
+              <button onClick={() => deleteitem()}>Delete</button>
               <h4 id={styles.name}>{item.name}</h4>
+              
               <p id={styles.address}>{item.address}</p>
               <div id={styles.details}>
                 <div id={styles.bed}>

@@ -44,8 +44,14 @@ function HomePage() {
     setTest(apijson);
   }
 
-  const generateGenderDataForDropdown =()=>{
+  const generateTypeDataForDropdown =()=>{
     return [...new Set(test.map((item) =>item.Type))];
+  }
+  const generateLocationForDropdown =()=>{
+    return [...new Set(test.map((item) =>item.location))];
+  }
+  const generateBedForDropdown =()=>{
+    return [...new Set(test.map((item) =>item.bed))];
   }
 
   const handleFilterName=(name)=>{
@@ -67,14 +73,37 @@ function HomePage() {
     });
     setData(filteredData);
   }
+  const handleFilterBed=(name)=>{
+    const filteredData = test.filter((item)=>{
+        const fullName=`${item.bed}`;
+        if(fullName.toLowerCase().includes(name.toLowerCase())){
+          return item;
+        }
+    });
+    setData(filteredData);
+  }
+  const handleFilterLocation=(name)=>{
+    const filteredData = test.filter((item)=>{
+        const fullName=`${item.location}`;
+        if(fullName.toLowerCase().includes(name.toLowerCase())){
+          return item;
+        }
+    });
+    setData(filteredData);
+  }
 
   return (
     <div>
       <Navbar count={favv.length} />
       <Filterbar 
-       genders={generateGenderDataForDropdown()}
+       types={generateTypeDataForDropdown()}
+       locations={generateLocationForDropdown()}
+       beds={generateBedForDropdown()}
        onTypeFilter={handleFilterType}
-       onNameFilter={handleFilterName} />
+       onBedFilter={handleFilterBed}
+       onNameFilter={handleFilterName}
+       onLocationFilter={handleFilterLocation}
+       />
       <div id={styles.show} >
         {allData?.map((item) => {
           return (

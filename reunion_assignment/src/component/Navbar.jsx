@@ -10,7 +10,8 @@ const Navbar = ({count}) => {
         <p>Buy</p>
         <p>Sell</p>
         <p></p>
-        <select id={styles.manageproperty} >
+       <div id={styles.seg0}>
+       <select id={styles.manageproperty} >
             <option value="">Manage Property</option>
             <option value="Houses">Houses</option>
             <option value="Mortage">Mortage</option>
@@ -22,6 +23,7 @@ const Navbar = ({count}) => {
             <option value="">B</option>
             <option value="">C</option>
         </select>
+       </div>
         </div>
         <div id={styles.fav}>
             
