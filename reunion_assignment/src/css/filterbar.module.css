@@ -1,3 +1,7 @@
+#filterbar{
+margin-bottom: 2%;
+}
+
 #filterbar>form{
     display:flex;
     gap:5%;

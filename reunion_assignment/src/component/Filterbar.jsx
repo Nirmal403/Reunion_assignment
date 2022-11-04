@@ -92,9 +92,9 @@ const Filterbar = ({types,onNameFilter,onTypeFilter,onLocationFilter,locations,b
             <label htmlFor="endDate">To</label>
             <input type='date'/>
         </div> */}
-        <div>
+        {/* <div>
             <button id={styles.submit} type='submit'>Submit</button>
-        </div>
+        </div> */}
         </form>
     </div>
   )
